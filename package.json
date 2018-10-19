@@ -1,0 +1,24 @@
+{
+  "name": "project-gulp",
+  "version": "1.0.0",
+  "description": "project from Gulp screencast (I. Kantor)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "github:gulpjs/gulp#4.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp-debug": "^4.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-newer": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-stylus": "^2.7.0",
+    "stylus": "^0.54.5"
+  }
+}
