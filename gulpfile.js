@@ -8,11 +8,19 @@ const gulpIf = require('gulp-if');
 const del = require('del');
 const newer = require('gulp-newer');
 const browserSync = require('browser-sync').create();
+const notify = require('gulp-notify');
+const plumber = require('gulp-plumber');
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
 
 gulp.task('styles', function() {
 	return gulp.src('frontend/styles/main.styl')
+		.pipe(plumber({errorHandler: notify.onError(function(err) {
+			return {
+				title: 'Styles',
+				message: err.message
+			};
+		})}))
 		.pipe(gulpIf(isDevelopment, sourcemaps.init()))
 		.pipe(stylus())
 		.pipe(gulpIf(isDevelopment, sourcemaps.write()))
